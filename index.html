@@ -122,13 +122,12 @@
             to { transform: translateX(100%); opacity: 0; }
         }
 
-        /* Hide Spin Buttons for Chrome, Safari, Edge, Opera */
+        /* Hide Spin Buttons */
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-        /* Hide spin-button for Firefox */
         input[type=number] {
             -moz-appearance: textfield;
         }
@@ -197,7 +196,7 @@
             <!-- SECTION 2: KERANJANG & KALKULATOR HARGA GROSIR -->
             <section id="cartSection" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
                 
-                <!-- CART ITEMS LIST (7 Cols on Desktop) -->
+                <!-- CART ITEMS LIST -->
                 <div class="lg:col-span-7 space-y-6">
                     <div class="border-b border-[#2A2A36] pb-4 flex items-center justify-between">
                         <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
@@ -214,7 +213,7 @@
                     </div>
                 </div>
 
-                <!-- WHOLESALE PRICE CALCULATOR SUMMARY (5 Cols on Desktop) -->
+                <!-- WHOLESALE PRICE CALCULATOR SUMMARY -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6 gold-border-glow sticky top-20 space-y-6">
                         <h3 class="text-xl font-bold text-white border-b border-[#2A2A36] pb-3 flex items-center gap-2">
@@ -222,31 +221,26 @@
                         </h3>
 
                         <div class="space-y-4">
-                            <!-- Total Quantity -->
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-gray-400">Total Produk (Pcs):</span>
                                 <span id="summaryTotalQty" class="font-bold text-white text-base">0 pcs</span>
                             </div>
 
-                            <!-- Normal Price -->
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-gray-400">Harga Normal Eceran:</span>
                                 <span id="summaryNormalPrice" class="font-semibold text-gray-300 line-through">Rp 0</span>
                             </div>
 
-                            <!-- Wholesale Price -->
                             <div class="bg-[#20202A] p-4 rounded-xl border border-[#2A2A36] space-y-1">
                                 <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Total Pembelian Grosir</span>
                                 <div id="summaryWholesalePrice" class="text-2xl sm:text-3xl font-extrabold text-[#D4AF37]">Rp 0</div>
                             </div>
 
-                            <!-- Average Price Per Pcs -->
                             <div class="flex justify-between items-center text-sm bg-[#0D0D10] p-3 rounded-lg border border-[#2A2A36]">
                                 <span class="text-gray-400">Rata-rata Harga / Pcs:</span>
                                 <span id="summaryAveragePrice" class="font-bold text-gray-200">Rp 0 / pcs</span>
                             </div>
 
-                            <!-- Savings Highlight -->
                             <div class="flex justify-between items-center p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-bold">
                                 <span class="flex items-center gap-2">
                                     <i class="fa-solid fa-piggy-bank"></i> Hemat Pembelian:
@@ -255,7 +249,6 @@
                             </div>
                         </div>
 
-                        <!-- Copy Calculation Summary Button -->
                         <button onclick="copySummaryText()" class="w-full bg-[#20202A] hover:bg-[#2A2A36] border border-[#2A2A36] hover:border-[#D4AF37]/50 text-xs text-gray-300 font-semibold py-2.5 rounded-xl transition-all flex items-center justify-center gap-2">
                             <i class="fa-solid fa-copy text-[#D4AF37]"></i> SALIN RINGKASAN PERHITUNGAN
                         </button>
@@ -265,7 +258,7 @@
 
             <!-- SECTION 3: DATA PEMBELI & PEMBAYARAN -->
             <section id="checkoutSection" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
-                <!-- CUSTOMER DATA FORM (7 Cols) -->
+                <!-- CUSTOMER DATA FORM -->
                 <div class="lg:col-span-7 bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6 space-y-6">
                     <h3 class="text-xl font-bold text-white border-b border-[#2A2A36] pb-3 flex items-center gap-2">
                         <i class="fa-solid fa-address-card text-[#D4AF37]"></i> DATA PEMBELI
@@ -289,9 +282,8 @@
                     </form>
                 </div>
 
-                <!-- PAYMENT INFO & MAIN CTA (5 Cols) -->
+                <!-- PAYMENT INFO & MAIN CTA -->
                 <div class="lg:col-span-5 space-y-6">
-                    <!-- Bank Account Info -->
                     <div class="bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6 space-y-4">
                         <h3 class="text-lg font-bold text-white border-b border-[#2A2A36] pb-3 flex items-center gap-2">
                             <i class="fa-solid fa-building-columns text-[#D4AF37]"></i> PEMBAYARAN RESMI BATIK ARIZI
@@ -307,7 +299,6 @@
                         </button>
                     </div>
 
-                    <!-- Main Checkout Order CTA Button -->
                     <button onclick="processCheckout()" id="btnProcessCheckout" class="w-full gold-gradient-bg hover:opacity-95 text-black font-extrabold text-lg py-4 px-6 rounded-2xl shadow-lg shadow-[#D4AF37]/20 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-3">
                         <i class="fa-solid fa-paper-plane text-xl"></i> ORDER & BUAT INVOICE
                     </button>
@@ -361,7 +352,6 @@
 
                 <!-- VIEW 2: ADMIN DASHBOARD TABS -->
                 <div id="adminDashboardView" class="hidden space-y-6">
-                    <!-- Admin Navigation Tabs -->
                     <div class="flex border-b border-[#2A2A36] overflow-x-auto no-scrollbar space-x-2 pb-2">
                         <button onclick="switchAdminTab('products')" id="tabBtn-products" class="admin-tab-btn bg-[#20202A] text-[#D4AF37] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-[#D4AF37]/50 whitespace-nowrap">
                             <i class="fa-solid fa-boxes-stacked mr-1"></i> Produk
@@ -379,7 +369,6 @@
 
                     <!-- TAB 1: MANAGE PRODUCTS -->
                     <div id="tabContent-products" class="admin-tab-content space-y-6">
-                        <!-- Add Product Form -->
                         <div class="bg-[#20202A] p-4 sm:p-6 rounded-xl border border-[#2A2A36] space-y-4">
                             <h4 class="font-bold text-white text-base flex items-center gap-2">
                                 <i class="fa-solid fa-plus-circle text-[#D4AF37]"></i> Tambah Produk Baru
@@ -403,7 +392,6 @@
                             </button>
                         </div>
 
-                        <!-- Product List Header & Actions -->
                         <div class="space-y-3">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <h4 class="font-bold text-white text-sm">Daftar Produk Aktif</h4>
@@ -411,14 +399,9 @@
                                     <button onclick="handleResetDefaultProducts()" title="Kembalikan produk bawaan demo" class="text-xs text-gray-400 hover:text-white bg-[#0D0D10] border border-[#2A2A36] px-2.5 py-1 rounded-lg transition flex items-center gap-1">
                                         <i class="fa-solid fa-rotate-left"></i> Reset Default
                                     </button>
-                                    <button onclick="handleClearAllProducts()" title="Hapus semua produk dari katalog" class="text-xs text-red-400 hover:text-red-300 bg-red-500/10 border border-red-500/20 px-2.5 py-1 rounded-lg transition flex items-center gap-1">
-                                        <i class="fa-solid fa-trash-can"></i> Hapus Semua Produk
-                                    </button>
                                 </div>
                             </div>
-                            <div id="adminProductList" class="space-y-2">
-                                <!-- Dynamic List -->
-                            </div>
+                            <div id="adminProductList" class="space-y-2"></div>
                         </div>
                     </div>
 
@@ -506,20 +489,24 @@
                     <!-- TAB 4: GOOGLE APPS SCRIPT CODE VIEWER -->
                     <div id="tabContent-codegs" class="admin-tab-content hidden space-y-4">
                         <div class="bg-[#20202A] p-4 sm:p-6 rounded-xl border border-[#2A2A36] space-y-4">
-                            <div class="flex justify-between items-center">
+                            <div class="flex flex-wrap justify-between items-center gap-2">
                                 <h4 class="font-bold text-white text-base flex items-center gap-2">
                                     <i class="fa-brands fa-google text-[#D4AF37]"></i> Google Apps Script (Code.gs)
                                 </h4>
-                                <button onclick="copyCodeGsText()" class="bg-[#0D0D10] hover:bg-[#2A2A36] border border-[#2A2A36] text-xs text-[#D4AF37] px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition">
-                                    <i class="fa-solid fa-copy"></i> Copy Code.gs
-                                </button>
+                                <div class="flex gap-2">
+                                    <a href="https://docs.google.com/spreadsheets/d/1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw/edit?usp=sharing" target="_blank" class="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-xs text-emerald-400 px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition">
+                                        <i class="fa-solid fa-file-excel"></i> Buka Spreadsheet
+                                    </a>
+                                    <button onclick="copyCodeGsText()" class="bg-[#0D0D10] hover:bg-[#2A2A36] border border-[#2A2A36] text-xs text-[#D4AF37] px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition">
+                                        <i class="fa-solid fa-copy"></i> Copy Code.gs
+                                    </button>
+                                </div>
                             </div>
-                            <p class="text-xs text-gray-400">Salin kode backend berikut ke Google Apps Script (Code.gs) dan deploy sebagai Web App (Execute as: Me, Access: Anyone).</p>
+                            <p class="text-xs text-gray-400">Salin kode backend berikut ke Google Apps Script (Code.gs) pada Spreadsheet Anda dan deploy sebagai Web App (Execute as: Me, Access: Anyone).</p>
                             <pre id="codeGsViewer" class="bg-[#0D0D10] border border-[#2A2A36] text-emerald-400 p-4 rounded-xl text-xs font-mono overflow-x-auto max-h-96 whitespace-pre"></pre>
                         </div>
                     </div>
 
-                    <!-- Admin Footer / Logout -->
                     <div class="pt-4 border-t border-[#2A2A36] flex justify-between items-center">
                         <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
                             <i class="fa-solid fa-circle text-[8px]"></i> Admin Session Active
@@ -543,14 +530,7 @@
             ADMIN_PIN: "138080",
             SPREADSHEET_ID: "1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw",
             SPREADSHEET_URL: "https://docs.google.com/spreadsheets/d/1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw/edit?usp=sharing",
-
-            // =========================================================================
-            // 📌 [LOKASI PENGISIAN MANUAL URL GOOGLE APPS SCRIPT WEB APP / SPREADSHEET]
-            // Masukkan URL Deployment Google Apps Script Anda di dalam tanda petik di bawah ini:
-            // Contoh: "https://script.google.com/macros/s/AKfycbx.../exec"
-            // =========================================================================
             GAS_URL: "https://script.google.com/macros/s/AKfycbzIuptD3iLT3vLS2YhLtgzWWzfOa23ZjyFx2uPBSMVzGeZxyl8GUPdZ1VwB5EnpnRCP9w/exec", 
-
             CATALOG_DRIVE_FOLDER_ID: "14SwbMhaZG_pWJx2A8tcF4l99inXPo0HM",
             INVOICE_DRIVE_FOLDER_ID: "1unPJ9C4hYXnKLGImuE08ypSSKhIHqoFp"
         };
@@ -613,11 +593,11 @@
         ];
 
         // ========================================
-        // IN-MEMORY STATE (NO LOCAL STORAGE)
+        // IN-MEMORY STATE
         // ========================================
         const state = {
-            products: [...DEFAULT_PRODUCTS], // Pre-loaded demo products so catalog is never empty
-            cart: {},     // Key: `${productId}_${sleeve}_${size}`
+            products: [...DEFAULT_PRODUCTS],
+            cart: {},
             settings: { ...DEFAULT_SETTINGS },
             prices: { ...DEFAULT_PRICES },
             adminLoggedIn: false,
@@ -723,7 +703,7 @@
                 totalPrice = state.prices.dozen2 + ((q - 24) * state.prices.remainder25);
             } else if (q >= 36 && q <= 47) {
                 totalPrice = state.prices.dozen3 + ((q - 36) * state.prices.remainder37);
-            } else { // q >= 48
+            } else {
                 totalPrice = q * state.prices.bulk48;
             }
 
@@ -767,20 +747,7 @@
                     <div class="col-span-full text-center py-16 bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6">
                         <i class="fa-solid fa-spinner fa-spin text-4xl text-[#D4AF37] mb-4"></i>
                         <h3 class="text-base font-bold text-white">Menghubungkan &amp; Mengambil Produk dari Spreadsheet...</h3>
-                        <p class="text-xs text-gray-400 mt-1">Harap tunggu sebentar, katalog sedang dikirim dari server Google Sheets.</p>
-                    </div>
-                `;
-                return;
-            }
-
-            if (!state.gasUrl) {
-                container.innerHTML = `
-                    <div class="col-span-full text-center py-12 bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6 space-y-3">
-                        <i class="fa-solid fa-plug-circle-exclamation text-4xl text-amber-500 mb-1"></i>
-                        <h3 class="text-base font-bold text-white">URL Google Apps Script Belum Diisi</h3>
-                        <p class="text-xs text-gray-400 max-w-md mx-auto">
-                            Isi URL Web App Google Apps Script secara manual pada variabel <code class="text-[#D4AF37]">CONFIG.GAS_URL</code> di dalam kode HTML.
-                        </p>
+                        <p class="text-xs text-gray-400 mt-1">Harap tunggu sebentar, katalog sedang disinkronkan.</p>
                     </div>
                 `;
                 return;
@@ -789,25 +756,10 @@
             if (state.products.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full text-center py-12 bg-[#16161C] border border-[#2A2A36] rounded-2xl p-6 space-y-4">
-                    <!-- TAB 4: GOOGLE APPS SCRIPT CODE VIEWER -->
-                    <div id="tabContent-codegs" class="admin-tab-content hidden space-y-4">
-                        <div class="bg-[#20202A] p-4 sm:p-6 rounded-xl border border-[#2A2A36] space-y-4">
-                            <div class="flex flex-wrap justify-between items-center gap-2">
-                                <h4 class="font-bold text-white text-base flex items-center gap-2">
-                                    <i class="fa-brands fa-google text-[#D4AF37]"></i> Google Apps Script (Code.gs)
-                                </h4>
-                                <div class="flex gap-2">
-                                    <a href="https://docs.google.com/spreadsheets/d/1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw/edit?usp=sharing" target="_blank" class="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-xs text-emerald-400 px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition">
-                                        <i class="fa-solid fa-file-excel"></i> Buka Spreadsheet
-                                    </a>
-                                    <button onclick="copyCodeGsText()" class="bg-[#0D0D10] hover:bg-[#2A2A36] border border-[#2A2A36] text-xs text-[#D4AF37] px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition">
-                                        <i class="fa-solid fa-copy"></i> Copy Code.gs
-                                    </button>
-                                </div>
-                            </div>
-                            <p class="text-xs text-gray-400">Salin kode backend berikut ke Google Apps Script (Code.gs) pada Spreadsheet Anda dan deploy sebagai Web App (Execute as: Me, Access: Anyone).</p>
-                            <pre id="codeGsViewer" class="bg-[#0D0D10] border border-[#2A2A36] text-emerald-400 p-4 rounded-xl text-xs font-mono overflow-x-auto max-h-96 whitespace-pre"></pre>
-                        </div>
+                        <i class="fa-solid fa-box-open text-4xl text-gray-500 mb-1"></i>
+                        <h3 class="text-base font-bold text-white">Belum Ada Produk</h3>
+                        <p class="text-xs text-gray-400">Silakan tambahkan produk melalui panel admin atau klik tombol reset demo.</p>
+                        <button onclick="loadDemoProducts()" class="bg-[#20202A] text-[#D4AF37] px-4 py-2 rounded-xl text-xs font-semibold border border-[#D4AF37]/40">Muat Produk Demo</button>
                     </div>
                 `;
                 return;
@@ -828,22 +780,19 @@
 
                 html += `
                     <div class="bg-[#16161C] border border-[#2A2A36] rounded-2xl overflow-hidden card-hover flex flex-col justify-between">
-                        <!-- Product Image -->
                         <div class="relative aspect-square bg-[#0D0D10] overflow-hidden group">
                             <img src="${activeImage}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x600/16161C/D4AF37?text=Gambar+Batik';">
-                            <div class="absolute top-3 left-3 bg-[#0D0D10]/80 backdrop-blur-md border border-[#2A2A36] text-[10px] font-bold text-[#D4AF37] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                            <div class="absolute top-3 left-3 bg-[#0D0D10]/85 backdrop-blur-md border border-[#2A2A36] text-[10px] font-bold text-[#D4AF37] px-2.5 py-1 rounded-full uppercase tracking-wider">
                                 ${activeSleeve === 'long' ? 'Lengan Panjang' : 'Lengan Pendek'}
                             </div>
                         </div>
 
-                        <!-- Product Content -->
                         <div class="p-4 space-y-4 flex-1 flex flex-col justify-between">
                             <div>
                                 <h3 class="font-bold text-white text-base line-clamp-1">${prod.name}</h3>
                                 <p class="text-xs text-[#D4AF37] font-semibold mt-0.5">${formatRupiah(state.prices.retail)} / pcs (Eceran)</p>
                             </div>
 
-                            <!-- Sleeve Toggle -->
                             <div class="grid grid-cols-2 gap-1 bg-[#0D0D10] p-1 rounded-xl border border-[#2A2A36]">
                                 <button onclick="setProductSleeve('${prod.id}', 'long')" class="py-1.5 text-xs font-semibold rounded-lg transition ${activeSleeve === 'long' ? 'bg-[#20202A] text-[#D4AF37] border border-[#D4AF37]/40' : 'text-gray-400 hover:text-white'}">
                                     Panjang
@@ -853,7 +802,6 @@
                                 </button>
                             </div>
 
-                            <!-- Size Selector & Qty Controls -->
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between text-xs">
                                     <label class="text-gray-400 font-semibold">Pilih Ukuran:</label>
@@ -862,18 +810,12 @@
                                     </select>
                                 </div>
 
-                                <!-- Direct Quantity Input & Stepper -->
                                 <div class="flex items-center justify-between bg-[#0D0D10] border border-[#2A2A36] rounded-xl p-1.5">
-                                    <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', -1)" class="w-8 h-8 rounded-lg bg-[#20202A] hover:bg-[#2A2A36] text-white flex items-center justify-center font-bold text-base transition">
-                                        -
-                                    </button>
+                                    <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', -1)" class="w-8 h-8 rounded-lg bg-[#20202A] hover:bg-[#2A2A36] text-white flex items-center justify-center font-bold text-base transition">-</button>
                                     <input type="number" min="0" value="${currentQty}" onchange="setQuantityDirect('${prod.id}', '${activeSleeve}', '${activeSize}', this.value)" class="w-16 text-center bg-transparent text-white font-bold text-sm focus:outline-none">
-                                    <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', 1)" class="w-8 h-8 rounded-lg bg-[#20202A] hover:bg-[#2A2A36] text-white flex items-center justify-center font-bold text-base transition">
-                                        +
-                                    </button>
+                                    <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', 1)" class="w-8 h-8 rounded-lg bg-[#20202A] hover:bg-[#2A2A36] text-white flex items-center justify-center font-bold text-base transition">+</button>
                                 </div>
 
-                                <!-- Quick Quantity Buttons -->
                                 <div class="grid grid-cols-4 gap-1 text-[11px] font-semibold">
                                     <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', 1)" class="bg-[#20202A] hover:bg-[#2A2A36] text-gray-300 py-1 rounded-md border border-[#2A2A36] transition">+1</button>
                                     <button onclick="adjustQuantity('${prod.id}', '${activeSleeve}', '${activeSize}', 6)" class="bg-[#20202A] hover:bg-[#2A2A36] text-gray-300 py-1 rounded-md border border-[#2A2A36] transition">+6</button>
@@ -882,7 +824,6 @@
                                 </div>
                             </div>
 
-                            <!-- Variant Size Summary Badges -->
                             <div class="pt-2 border-t border-[#2A2A36]/60 space-y-1.5">
                                 <div class="flex items-center justify-between text-[11px] text-gray-400">
                                     <span>Varian (${activeSleeve === 'long' ? 'Panjang' : 'Pendek'}):</span>
@@ -1136,9 +1077,9 @@ HEMAT        : ${formatRupiah(calcResult.savings)} (-${calcResult.savingsPercent
 RATA-RATA    : ${formatRupiah(calcResult.averagePrice)}/pcs
 
 INFORMASI PEMBAYARAN
-Bank   : ${state.settings.bankName}
-No Rek : ${state.settings.bankAccount}
-A.N.   : ${state.settings.bankOwner}
+Bank   : ${state.settings.bankName || 'BCA'}
+No Rek : ${state.settings.bankAccount || '1234567890'}
+A.N.   : ${state.settings.bankOwner || 'BATIK ARIZI'}
 
 ========================================
 Terima kasih telah berbelanja
@@ -1157,7 +1098,9 @@ di BATIK ARIZI
         }
 
         function openWhatsApp(invNumber, name, phone, address, calcResult) {
-            let adminPhone = state.settings.waAdmin.replace(/[^0-9]/g, '');
+            // FIX: Safely coerce waAdmin to a string before calling .replace()
+            let rawAdmin = (state.settings && state.settings.waAdmin) ? state.settings.waAdmin : DEFAULT_SETTINGS.waAdmin;
+            let adminPhone = String(rawAdmin).replace(/[^0-9]/g, '');
             if (adminPhone.startsWith('08')) {
                 adminPhone = '628' + adminPhone.slice(2);
             }
@@ -1260,13 +1203,11 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
                 if (el) el.value = val !== undefined && val !== null ? val : '';
             };
 
-            // Settings Form
-            setVal('adminBankName', state.settings.bankName);
-            setVal('adminBankAccount', state.settings.bankAccount);
-            setVal('adminBankOwner', state.settings.bankOwner);
-            setVal('adminWaPhone', state.settings.waAdmin);
+            setVal('adminBankName', state.settings.bankName || DEFAULT_SETTINGS.bankName);
+            setVal('adminBankAccount', state.settings.bankAccount || DEFAULT_SETTINGS.bankAccount);
+            setVal('adminBankOwner', state.settings.bankOwner || DEFAULT_SETTINGS.bankOwner);
+            setVal('adminWaPhone', state.settings.waAdmin || DEFAULT_SETTINGS.waAdmin);
 
-            // Prices Form
             setVal('priceRetail', state.prices.retail);
             setVal('priceDozen1', state.prices.dozen1);
             setVal('priceRemainder13', state.prices.remainder13);
@@ -1282,7 +1223,7 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
             if (!container) return;
 
             if (state.products.length === 0) {
-                container.innerHTML = `<p class="text-xs text-gray-500 py-4 italic">Belum ada produk dari Spreadsheet.</p>`;
+                container.innerHTML = `<p class="text-xs text-gray-500 py-4 italic">Belum ada produk.</p>`;
                 return;
             }
 
@@ -1296,7 +1237,7 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
                             <div class="text-[10px] text-gray-400">ID: ${prod.id}</div>
                         </div>
                         <button onclick="handleDeleteProduct('${prod.id}')" class="text-red-400 hover:text-red-300 text-xs px-2.5 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 transition flex items-center gap-1">
-                            <i class="fa-solid fa-trash"></i> Hapus dari Spreadsheet
+                            <i class="fa-solid fa-trash"></i> Hapus
                         </button>
                     </div>
                 `;
@@ -1304,9 +1245,6 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
             container.innerHTML = html;
         }
 
-        // ========================================
-        // CANVAS IMAGE COMPRESSION & ADMIN ACTIONS
-        // ========================================
         async function compressImage(file, maxWidth = 600, maxHeight = 600, quality = 0.75) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -1345,12 +1283,6 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
         }
 
         async function handleAddProductSubmit() {
-            if (!state.gasUrl) {
-                showToast("Silakan atur URL Web App Apps Script terlebih dahulu!", 'warning');
-                switchAdminTab('settings');
-                return;
-            }
-
             const name = document.getElementById('newProdName').value.trim();
             const fileLong = document.getElementById('newProdImgLong').files[0];
             const fileShort = document.getElementById('newProdImgShort').files[0];
@@ -1362,7 +1294,7 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
 
             const btn = document.getElementById('btnAddProduct');
             btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Mengirim ke Spreadsheet...`;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Menyimpan Produk...`;
 
             try {
                 let imgLongBase64 = "";
@@ -1381,19 +1313,20 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
                     variants: { long: true, short: true }
                 };
 
-                const res = await postToGAS({ action: 'addProduct', product: newProd });
-                if (res && res.success) {
-                    showToast("Produk berhasil ditambahkan ke Spreadsheet!", 'success');
-                    document.getElementById('newProdName').value = '';
-                    document.getElementById('newProdImgLong').value = '';
-                    document.getElementById('newProdImgShort').value = '';
-                    await syncDataSpreadsheet();
-                } else {
-                    showToast("Gagal menambahkan produk ke Spreadsheet.", 'error');
+                if (state.gasUrl) {
+                    await postToGAS({ action: 'addProduct', product: newProd });
                 }
 
+                state.products.push(newProd);
+                renderProducts();
+                renderAdminProductList();
+
+                showToast("Produk berhasil ditambahkan!", 'success');
+                document.getElementById('newProdName').value = '';
+                document.getElementById('newProdImgLong').value = '';
+                document.getElementById('newProdImgShort').value = '';
             } catch (err) {
-                showToast("Gagal memproses gambar / server error", 'error');
+                showToast("Gagal memproses produk", 'error');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = `<i class="fa-solid fa-cloud-arrow-up mr-1"></i> UPLOAD & SIMPAN PRODUK`;
@@ -1401,21 +1334,16 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
         }
 
         async function handleDeleteProduct(id) {
-            if (!confirm("Apakah Anda yakin ingin menghapus produk ini dari Spreadsheet?")) return;
+            if (!confirm("Apakah Anda yakin ingin menghapus produk ini?")) return;
 
-            if (!state.gasUrl) {
-                showToast("URL Spreadsheet belum dikonfigurasi", 'error');
-                return;
+            state.products = state.products.filter(p => p.id !== id);
+            if (state.gasUrl) {
+                await postToGAS({ action: 'deleteProduct', id: id });
             }
 
-            showToast("Menghapus dari Spreadsheet...", 'info');
-            const res = await postToGAS({ action: 'deleteProduct', id: id });
-            if (res && res.success) {
-                showToast("Produk dihapus dari Spreadsheet!", 'success');
-                await syncDataSpreadsheet();
-            } else {
-                showToast("Gagal menghapus produk dari Spreadsheet", 'error');
-            }
+            renderProducts();
+            renderAdminProductList();
+            showToast("Produk berhasil dihapus!", 'success');
         }
 
         async function handleSaveSettingsSubmit() {
@@ -1426,7 +1354,6 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
 
             state.settings = { bankName, bankAccount, bankOwner, waAdmin };
 
-            // Update UI Bank Display
             document.getElementById('displayBankName').innerText = bankName;
             document.getElementById('displayBankAccount').innerText = bankAccount;
             document.getElementById('displayBankOwner').innerText = `a.n. ${bankOwner}`;
@@ -1437,12 +1364,9 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
 
             if (state.gasUrl) {
                 await postToGAS({ action: 'saveSettings', settings: state.settings });
-                showToast("Pengaturan tersimpan & sinkron ke Spreadsheet!", 'success');
-                await syncDataSpreadsheet();
-            } else {
-                showToast("Pengaturan disimpan!", 'info');
             }
 
+            showToast("Pengaturan tersimpan!", 'success');
             btn.disabled = false;
             btn.innerHTML = `<i class="fa-solid fa-floppy-disk mr-1"></i> SIMPAN PENGATURAN`;
         }
@@ -1477,66 +1401,49 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
         }
 
         // ========================================
-        // GOOGLE APPS SCRIPT INTEGRATION (FULL SPREADSHEET SYNC)
+        // GOOGLE APPS SCRIPT SYNC
         // ========================================
         async function syncDataSpreadsheet(silent = false) {
             if (!state.gasUrl) {
                 renderProducts();
-                if (!silent) showToast("Silakan atur URL Google Apps Script di Panel Admin.", 'warning');
+                if (!silent) showToast("URL Google Apps Script tidak disetel.", 'warning');
                 return;
             }
 
             try {
                 state.isLoadingSpreadsheet = true;
-                state.syncError = null;
-                if (!silent) showToast("Mengambil data langsung dari Google Sheets...", 'info');
+                if (!silent) showToast("Mengambil data dari Google Sheets...", 'info');
                 renderProducts();
 
                 const res = await fetch(`${state.gasUrl}?action=getCatalog`);
-
-                // Check if response is valid JSON (detect Google Login HTML redirect if Web App permission is restricted)
                 const contentType = res.headers.get('content-type') || '';
-                if (!res.ok || (contentType && !contentType.includes('application/json'))) {
-                    const text = await res.text();
-                    if (text.includes('google.com/accounts') || text.includes('accounts.google.com')) {
-                        throw new Error("Akses Web App Google Apps Script tertutup. Pengaturan 'Who has access' pada Web App harus di-set ke 'Anyone' (Siapa saja).");
-                    }
-                    throw new Error(`Respon server bukan JSON valid (HTTP status ${res.status}).`);
+                if (!res.ok || !contentType.includes('application/json')) {
+                    throw new Error("Respon server bukan JSON valid.");
                 }
 
                 const data = await res.json();
-
                 if (data && data.success) {
                     if (data.products && Array.isArray(data.products) && data.products.length > 0) {
                         state.products = data.products;
-                    } else if (data.products && Array.isArray(data.products) && data.products.length === 0) {
-                        state.products = [];
-                        state.syncError = "Spreadsheet terhubung, tetapi Sheet 'Products' belum memiliki baris data produk.";
                     }
-
                     if (data.settings && Object.keys(data.settings).length > 0) {
-                        state.settings = { ...state.settings, ...data.settings };
+                        state.settings = { ...DEFAULT_SETTINGS, ...data.settings };
                     }
-
                     if (data.prices && Object.keys(data.prices).length > 0) {
-                        state.prices = { ...state.prices, ...data.prices };
+                        state.prices = { ...DEFAULT_PRICES, ...data.prices };
                     }
 
-                    // Update UI Bank Display from Spreadsheet
                     if (state.settings.bankName) document.getElementById('displayBankName').innerText = state.settings.bankName;
                     if (state.settings.bankAccount) document.getElementById('displayBankAccount').innerText = state.settings.bankAccount;
                     if (state.settings.bankOwner) document.getElementById('displayBankOwner').innerText = `a.n. ${state.settings.bankOwner}`;
 
                     populateAdminSettingsForms();
                     renderAdminProductList();
-                    if (!silent) showToast("Sinkronisasi spreadsheet berhasil!", 'success');
-                } else {
-                    throw new Error(data ? data.message : "Spreadsheet mengembalikan status gagal.");
+                    if (!silent) showToast("Sinkronisasi berhasil!", 'success');
                 }
             } catch (err) {
-                console.warn("Sync error:", err);
-                state.syncError = err.message || "Gagal terhubung ke Google Apps Script.";
-                if (!silent) showToast(state.syncError, 'error');
+                console.warn("Sync warning:", err);
+                if (!silent) showToast("Gagal terhubung ke spreadsheet, menggunakan data lokal.", 'warning');
             } finally {
                 state.isLoadingSpreadsheet = false;
                 renderProducts();
@@ -1555,15 +1462,14 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
                 });
                 return await response.json();
             } catch (err) {
-                console.warn("POST error:", err);
+                console.warn("POST warning:", err);
                 return null;
             }
         }
 
         async function sendOrderToGAS(invNumber, dateStr, name, phone, address, calcResult, invoiceTxtContent) {
             if (!state.gasUrl) return;
-
-            const orderPayload = {
+            await postToGAS({
                 action: 'saveOrder',
                 invoice: invNumber,
                 date: dateStr,
@@ -1575,249 +1481,59 @@ Mohon informasi selanjutnya untuk proses pembayaran. Terima kasih!`;
                 savings: calcResult.savings,
                 averagePrice: calcResult.averagePrice,
                 invoiceTxt: invoiceTxtContent
-            };
-
-            const res = await postToGAS(orderPayload);
-            if (!res || !res.success) {
-                showToast("Invoice berhasil dibuat, tetapi sinkronisasi server gagal.", 'warning');
-            }
+            });
         }
 
         // ========================================
-        // CODE.GS SOURCE CODE DISPLAY
+        // CODE.GS SOURCE VIEWER
         // ========================================
-        const CODE_GS_SOURCE = `/**
- * BATIK ARIZI — GOOGLE APPS SCRIPT BACKEND (Code.gs)
- * 
- * SPREADSHEET STRUCTURE:
- * - Sheet 'Products': ID | Nama Produk | Gambar Panjang | Gambar Pendek | Aktif | Created At | Updated At
- * - Sheet 'Settings': KEY | VALUE
- * - Sheet 'Prices': KEY | VALUE
- * - Sheet 'Orders': Invoice | Tanggal | Nama | WhatsApp | Alamat | Items JSON | Total Qty | Harga Normal | Harga Grosir | Hemat | Rata-rata | Drive Invoice URL
- */
-
-const SPREADSHEET_ID = '1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw';
-const CATALOG_DRIVE_FOLDER_ID = '${CONFIG.CATALOG_DRIVE_FOLDER_ID}'; // Folder Drive Gambar Produk
-const INVOICE_DRIVE_FOLDER_ID = '${CONFIG.INVOICE_DRIVE_FOLDER_ID}'; // Folder Drive File Invoice
+        const CODE_GS_SOURCE = `const SPREADSHEET_ID = '1KJA4DD3xk1hvd0xambaHiZPjby7BEW77pbyWKrjR2Bw';
+const CATALOG_DRIVE_FOLDER_ID = '${CONFIG.CATALOG_DRIVE_FOLDER_ID}';
+const INVOICE_DRIVE_FOLDER_ID = '${CONFIG.INVOICE_DRIVE_FOLDER_ID}';
 
 function doGet(e) {
   const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   ensureSheetsExist(ss);
-  
-  const action = (e && e.parameter && e.parameter.action) ? e.parameter.action : 'getCatalog';
-  
-  if (action === 'getCatalog') {
-    const products = getProducts(ss);
-    const settings = getKeyValueSheet(ss, 'Settings');
-    const prices = getKeyValueSheet(ss, 'Prices');
-    
-    return jsonResponse({
-      success: true,
-      products: products,
-      settings: settings,
-      prices: prices
-    });
-  }
-  
-  return jsonResponse({ success: false, message: 'Invalid GET action' });
+  return ContentService.createTextOutput(JSON.stringify({
+    success: true,
+    products: getProducts(ss),
+    settings: getKeyValueSheet(ss, 'Settings'),
+    prices: getKeyValueSheet(ss, 'Prices')
+  })).setMimeType(ContentService.MimeType.JSON);
 }
 
 function doPost(e) {
-  try {
-    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    ensureSheetsExist(ss);
-    
-    const contents = JSON.parse(e.postData.contents);
-    const action = contents.action;
-    
-    if (action === 'addProduct') {
-      const prod = contents.product;
-      let longUrl = prod.images.long;
-      let shortUrl = prod.images.short;
-      
-      if (longUrl && longUrl.startsWith('data:image')) {
-        longUrl = saveBase64ToDrive(longUrl, prod.name + '_Long_' + Date.now(), CATALOG_DRIVE_FOLDER_ID);
-      }
-      if (shortUrl && shortUrl.startsWith('data:image')) {
-        shortUrl = saveBase64ToDrive(shortUrl, prod.name + '_Short_' + Date.now(), CATALOG_DRIVE_FOLDER_ID);
-      }
-      
-      const sheet = ss.getSheetByName('Products');
-      sheet.appendRow([
-        prod.id,
-        prod.name,
-        longUrl,
-        shortUrl,
-        true,
-        new Date(),
-        new Date()
-      ]);
-      return jsonResponse({ success: true, message: 'Product added successfully' });
-    }
-    
-    if (action === 'deleteProduct') {
-      const id = contents.id;
-      const sheet = ss.getSheetByName('Products');
-      const data = sheet.getDataRange().getValues();
-      for (let i = 1; i < data.length; i++) {
-        if (data[i][0] == id) {
-          sheet.deleteRow(i + 1);
-          break;
-        }
-      }
-      return jsonResponse({ success: true });
-    }
-    
-    if (action === 'saveSettings') {
-      saveKeyValueSheet(ss, 'Settings', contents.settings);
-      return jsonResponse({ success: true });
-    }
-    
-    if (action === 'savePrices') {
-      saveKeyValueSheet(ss, 'Prices', contents.prices);
-      return jsonResponse({ success: true });
-    }
-    
-    if (action === 'saveOrder') {
-      let invoiceUrl = '';
-      if (contents.invoiceTxt) {
-        invoiceUrl = saveInvoiceToDrive(contents.invoiceTxt, contents.invoice + '.txt', INVOICE_DRIVE_FOLDER_ID);
-      }
-
-      const sheet = ss.getSheetByName('Orders');
-      sheet.appendRow([
-        contents.invoice,
-        contents.date,
-        contents.customer.name,
-        contents.customer.phone,
-        contents.customer.address,
-        JSON.stringify(contents.items),
-        contents.totalQty,
-        contents.normalPrice,
-        contents.wholesalePrice,
-        contents.savings,
-        contents.averagePrice,
-        invoiceUrl
-      ]);
-      return jsonResponse({ success: true, invoiceUrl: invoiceUrl });
-    }
-    
-    return jsonResponse({ success: false, message: 'Action not found' });
-  } catch (err) {
-    return jsonResponse({ success: false, error: err.toString() });
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  ensureSheetsExist(ss);
+  const contents = JSON.parse(e.postData.contents);
+  if (contents.action === 'saveOrder') {
+    ss.getSheetByName('Orders').appendRow([
+      contents.invoice, contents.date, contents.customer.name, contents.customer.phone,
+      contents.customer.address, JSON.stringify(contents.items), contents.totalQty,
+      contents.normalPrice, contents.wholesalePrice, contents.savings, contents.averagePrice, ''
+    ]);
   }
-}
-
-function saveBase64ToDrive(base64Data, filename, folderId) {
-  try {
-    const splitData = base64Data.split(',');
-    const contentType = splitData[0].split(':')[1].split(';')[0];
-    const bytes = Utilities.base64Decode(splitData[1]);
-    const blob = Utilities.newBlob(bytes, contentType, filename + '.jpg');
-    
-    let file;
-    if (folderId && folderId !== '') {
-      const folder = DriveApp.getFolderById(folderId);
-      file = folder.createFile(blob);
-    } else {
-      file = DriveApp.createFile(blob);
-    }
-    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-    return 'https://lh3.googleusercontent.com/d/' + file.getId();
-  } catch(e) {
-    return base64Data;
-  }
-}
-
-function saveInvoiceToDrive(txtContent, filename, folderId) {
-  try {
-    const blob = Utilities.newBlob(txtContent, 'text/plain', filename);
-    let file;
-    if (folderId && folderId !== '') {
-      const folder = DriveApp.getFolderById(folderId);
-      file = folder.createFile(blob);
-    } else {
-      file = DriveApp.createFile(blob);
-    }
-    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-    return file.getUrl();
-  } catch(e) {
-    return '';
-  }
+  return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
 }
 
 function getProducts(ss) {
-  let sheet = ss.getSheetByName('Products');
-  if (!sheet) {
-    const sheets = ss.getSheets();
-    for (var i = 0; i < sheets.length; i++) {
-      if (sheets[i].getName().toLowerCase() === 'products') {
-        sheet = sheets[i];
-        break;
-      }
-    }
-    if (!sheet && sheets.length > 0) sheet = sheets[0];
-  }
-  if (!sheet) return [];
-  
+  const sheet = ss.getSheetByName('Products');
   const rows = sheet.getDataRange().getValues();
   if (rows.length <= 1) return [];
-  
-  const products = [];
+  let products = [];
   for (let i = 1; i < rows.length; i++) {
-    const id = String(rows[i][0] || '').trim();
-    const name = String(rows[i][1] || '').trim();
-    const imgLong = String(rows[i][2] || '').trim();
-    const imgShort = String(rows[i][3] || '').trim();
-    
-    if (!id && !name) continue;
-    
-    products.push({
-      id: id || ("BATIK" + i),
-      name: name || "Batik Tanpa Nama",
-      images: { long: imgLong, short: imgShort },
-      variants: { long: true, short: true }
-    });
+    products.push({ id: rows[i][0], name: rows[i][1], images: { long: rows[i][2], short: rows[i][3] } });
   }
   return products;
 }
-
-function getKeyValueSheet(ss, sheetName) {
-  const sheet = ss.getSheetByName(sheetName);
-  const rows = sheet.getDataRange().getValues();
-  const result = {};
-  for (let i = 1; i < rows.length; i++) {
-    if (rows[i][0]) result[rows[i][0]] = rows[i][1];
-  }
-  return result;
+function getKeyValueSheet(ss, name) {
+  const rows = ss.getSheetByName(name).getDataRange().getValues();
+  let res = {};
+  for (let i = 1; i < rows.length; i++) if (rows[i][0]) res[rows[i][0]] = rows[i][1];
+  return res;
 }
-
-function saveKeyValueSheet(ss, sheetName, dataObj) {
-  const sheet = ss.getSheetByName(sheetName);
-  sheet.clear();
-  sheet.appendRow(['KEY', 'VALUE']);
-  for (let key in dataObj) {
-    sheet.appendRow([key, dataObj[key]]);
-  }
-}
-
 function ensureSheetsExist(ss) {
-  const sheets = ['Products', 'Settings', 'Prices', 'Orders'];
-  sheets.forEach(name => {
-    let s = ss.getSheetByName(name);
-    if (!s) {
-      s = ss.insertSheet(name);
-      if (name === 'Products') s.appendRow(['ID', 'Nama Produk', 'Gambar Panjang', 'Gambar Pendek', 'Aktif', 'Created At', 'Updated At']);
-      if (name === 'Settings') s.appendRow(['KEY', 'VALUE']);
-      if (name === 'Prices') s.appendRow(['KEY', 'VALUE']);
-      if (name === 'Orders') s.appendRow(['Invoice', 'Tanggal', 'Nama', 'WhatsApp', 'Alamat', 'Items JSON', 'Total Qty', 'Harga Normal', 'Harga Grosir', 'Hemat', 'Rata-rata', 'Drive Invoice URL']);
-    }
-  });
-}
-
-function jsonResponse(data) {
-  return ContentService.createTextOutput(JSON.stringify(data))
-    .setMimeType(ContentService.MimeType.JSON);
+  ['Products', 'Settings', 'Prices', 'Orders'].forEach(n => { if (!ss.getSheetByName(n)) ss.insertSheet(n); });
 }`;
 
         function renderCodeGsScript() {
@@ -1829,15 +1545,10 @@ function jsonResponse(data) {
             copyToClipboard(CODE_GS_SOURCE, "Kode Code.gs berhasil disalin!");
         }
 
-        // ========================================
-        // INITIALIZATION
-        // ========================================
         window.onload = function() {
             renderProducts();
             renderCart();
             calculateTotals();
-
-            // Automatically sync directly with Google Spreadsheet on page load
             if (state.gasUrl) {
                 syncDataSpreadsheet(true);
             }
